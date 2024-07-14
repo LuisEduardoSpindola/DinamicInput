@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário de Pós-Graduação</title>
+</head>
+<body>
+
+<form id="formPosGraduacao">
+    <label for="modelo">Modelo:</label>
+    <select id="modelo" onchange="atualizarNome()">
+        <option value="presencial">Presencial</option>
+        <option value="ead">EAD</option>
+    </select>
+    <br><br>
+    
+    <label for="polo">Polo:</label>
+    <select id="polo" onchange="atualizarNome()">
+        <option value="cidadeA">Cidade A</option>
+        <option value="cidadeB">Cidade B</option>
+    </select>
+    <br><br>
+    
+    <label for="horario">Horário:</label>
+    <select id="horario" onchange="atualizarNome()">
+        <option value="diurno">Diurno</option>
+        <option value="noturno">Noturno</option>
+    </select>
+    <br><br>
+    
+    <label for="curso">Curso:</label>
+    <select id="curso" onchange="atualizarNome()">
+        <option value="engenharia">Engenharia</option>
+        <option value="direito">Direito</option>
+    </select>
+    <br><br>
+    
+    <label for="nomePos">Nome da Pós-Graduação:</label>
+    <input type="text" id="nomePos" value="PROCESSO SELETIVO PÓS-GRADUAÇÃO" disabled style="width:1000px">
+</form>
+
+<script>
+function atualizarNome() {
+    var modelo = document.getElementById('modelo').value;
+    var polo = document.getElementById('polo').value;
+    var horario = document.getElementById('horario').value;
+    var curso = document.getElementById('curso').value;
+
+    var nomePosGraduacao = 'PROCESSO SELETIVO PÓS-GRADUAÇÃO ' + modelo.toUpperCase() + ' ' + curso.toUpperCase() + ' ' + polo.toUpperCase() + ' ' + horario.toUpperCase();
+    
+    document.getElementById('nomePos').value = nomePosGraduacao;
+}
+</script>
+
+</body>
+</html>
